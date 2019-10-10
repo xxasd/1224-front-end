@@ -1,0 +1,9 @@
+@import '~antd/dist/antd.css';
+
+.clearfix {
+    zoom: 1;
+    &:before {
+        display: table;
+        content: "";
+    }
+}
