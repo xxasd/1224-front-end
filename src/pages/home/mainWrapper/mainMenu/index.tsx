@@ -3,18 +3,21 @@ import { Menu } from 'antd'
 
 const { SubMenu } = Menu;
 
-const MainMenu: React.FC = (prop) => {
+const MainMenu: React.FC = (props) => {
+    const theme = props.children;
 
     const handleClick = (e: any) => {
         console.log('click', e);
     }
 
-    useEffect(() => {
+    // useEffect(() => {
         
-    }, [prop]);
+    // }, [props]);
 
     return (
         <Menu
+            // @ts-ignore
+            theme={theme}
             onClick={handleClick}
             mode="inline">
                 <Menu.Item key="1">
