@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import NavBar from './navBar'
 import MainWrapper from './mainWrapper'
-import Test from './test'
+// import Test from './test'
 import http from 'axios'
 // import { get } from '../../api/axios'
 
@@ -24,7 +24,7 @@ const Home: React.FC = () => {
         <div className="home">
             <NavBar />
             <MainWrapper />
-            <Test children={0} />
+            {/* <Test children={0} /> */}
         </div>
     )
 }

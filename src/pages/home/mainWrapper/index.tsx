@@ -1,65 +1,37 @@
-import React, { useEffect, useReducer } from 'react'
-// import Button from 'antd/lib/button'
+import React, { useState } from 'react'
+import './index.scss'
+import MainMenu from './mainMenu'
+import MainContent from './mainContent'
+import { Row, Col, Switch } from 'antd'
 
 const MainWrapper: React.FC = () => {
-    // const [count, setCount] = useState(0);
-    // const [step, setStep] = useState(1);
-    // const latestCount = useRef(count);
-    const [state, dispatch] = useReducer(reducer, initialState);
-    const { count, step } = state;
-
-    useEffect(() => {
-        // document.title = `You clicked ${count} times`;
-        // latestCount.current = count;
-        // setTimeout(() => {
-        //     console.log(`You clicked ${count} times`);
-        //     console.log(`You clicked2 ${latestCount.current} times`);
-        // }, 3000);
-        const id = setInterval(() => {
-            // setCount(c => c + step)
-            dispatch({ type: 'tick', step: 0 });
-        }, 1000);
-        return () => clearInterval(id);
-    }, [dispatch]);
+    // 主题
+    const [theme, setTheme] = useState('light');
 
     return (
-        <div>
-            <h1>{count}</h1>
-            <input 
-                value={step} onChange={e => {
-                    dispatch({
-                        type: 'step',
-                        step: Number(e.target.value)
-                    })
-                }} type="text"/>
+        <div className="main-wrapper">
+            <div className="switch-theme">
+                <Switch
+                    checked={theme === "light"}
+                    onChange={(value) => {value ? setTheme('light'): setTheme('dark');}}
+                    checkedChildren="Dark"
+                    unCheckedChildren="Light"
+                />
+            </div>
+            <div className="am-row">
+                <Row>
+                    {/* main-menu */}
+                    <Col xs={24} sm={24} md={5} lg={5} xl={5} xxl={4}>
+                        <MainMenu children={theme} />
+                    </Col>
+                    {/* content */}
+                    <Col xs={0} sm={0} md={19} xl={19} xxl={19}>
+                        <MainContent />
+                    </Col>
+                </Row>
+            </div>
         </div>
     )
-}
-
-interface action extends Object {
-    type: string,
-    step: number
-}
-
-interface IinitialState extends Object {
-    count: number,
-    step: number,
-}
-
-const initialState = {
-    count: 0,
-    step: 1,
-}
-
-function reducer(state: IinitialState, action: action): IinitialState {
-    const { count, step } = state;
-    if(action.type === 'tick') {
-        return { count: count + step, step };
-    } else if(action.type === 'step') {
-        return { count, step: action.step };
-    } else {
-        throw new Error();
-    }
 }
 
 export default MainWrapper;
