@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Menu } from 'antd'
 
 const { SubMenu } = Menu;
@@ -10,14 +10,9 @@ const MainMenu: React.FC = (props) => {
         console.log('click', e);
     }
 
-    // useEffect(() => {
-        
-    // }, [props]);
-
     return (
         <Menu
-            // @ts-ignore
-            theme={theme}
+            className={`${theme==="light"?'':'ant-menu-dark'}`}
             onClick={handleClick}
             mode="inline">
                 <Menu.Item key="1">

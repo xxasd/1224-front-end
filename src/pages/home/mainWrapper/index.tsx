@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext, CHANGE_THEME } from '../../../store/theme'
 import './index.scss'
 import MainMenu from './mainMenu'
 import MainContent from './mainContent'
@@ -6,14 +7,15 @@ import { Row, Col, Switch } from 'antd'
 
 const MainWrapper: React.FC = () => {
     // 主题
-    const [theme, setTheme] = useState('light');
+    const { theme, dispatch } = useContext(ThemeContext);
 
     return (
-        <div className="main-wrapper">
+        <div 
+            className={`main-wrapper ${theme==="light"?'':'ant-menu-dark'}`}>
             <div className="switch-theme">
                 <Switch
                     checked={theme === "light"}
-                    onChange={(value) => {value ? setTheme('light'): setTheme('dark');}}
+                    // onChange={}
                     checkedChildren="Dark"
                     unCheckedChildren="Light"
                 />
