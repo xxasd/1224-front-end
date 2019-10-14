@@ -2,7 +2,6 @@
     position: relative;
     z-index: 10;
     max-width: 100%;
-    // box-shadow: rgb(240, 241, 242) 0px 2px 8px;
     background: rgb(255, 255, 255);
     .am-row {
         position: relative;
@@ -10,6 +9,7 @@
         margin-right: 0px;
         margin-left: 0px;
         zoom: 1;
+        transition: 0.3s all;
         &::before {
             display: table;
             content: "";
@@ -29,6 +29,9 @@
                     border-radius: 50%;
                     margin-right: 15px;
                 }
+            }
+            span {
+                font-size: 14px;
             }
         }
         #search-box {
