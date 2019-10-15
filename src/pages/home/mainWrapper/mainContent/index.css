@@ -1,0 +1,50 @@
+@charset "UTF-8";
+.main-container {
+  position: relative;
+  min-height: 500px;
+  padding: 0 64px;
+  overflow: hidden;
+  transition: 0.3s all;
+}
+
+.markdown-dark > * {
+  color: #fff !important;
+}
+
+/* 代码块高亮 */
+pre {
+  position: relative;
+  margin-bottom: 24px;
+  border-radius: 3px;
+  border: 1px solid #282C34;
+  background: #282C34;
+  overflow: hidden;
+}
+
+code {
+  color: #fff;
+  display: block;
+  padding: 12px 24px;
+  overflow-y: auto;
+  font-weight: 300;
+  font-family: Menlo, monospace;
+}
+
+code .has-numbering {
+  margin-left: 21px;
+}
+
+.pre-numbering {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  padding: 12px 2px 12px 0;
+  border-right: 1px solid #C3CCD0;
+  border-radius: 3px 0 0 3px;
+  background-color: #EEE;
+  text-align: right;
+  font-family: Menlo, monospace;
+  font-size: 0.8em;
+  color: #AAA;
+}
