@@ -4,6 +4,13 @@
     padding: 0 64px;
     overflow: hidden;
     background: #fff;
+    transition: 0.3s all;
+}
+
+.markdown-dark {
+    & > * {
+        color: #fff !important;
+    }
 }
 
 /* 代码块高亮 */
