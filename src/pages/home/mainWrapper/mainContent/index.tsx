@@ -1,22 +1,32 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import marked from 'marked'
 import hljs from 'highlight.js'
-import 'highlight.js/styles/github.css'
+import 'highlight.js/styles/railscasts.css'
 import './index.scss'
 
-const input = '```javascript\nfunction(){\n\tconsole.log(123)\n}\n```';
+const input = '# This is a header\n\n```javascript\nfunction(){\n\tconsole.log(123)\n}\n```';
+
+marked.setOptions({
+    renderer: new marked.Renderer(),
+    highlight: function(code) {
+      return hljs.highlightAuto(code).value;
+    },
+    pedantic: false,
+    gfm: true,
+    tables: true,
+    breaks: false,
+    sanitize: false,
+    smartLists: true,
+    smartypants: false,
+    xhtml: false
+  });
+
 const output = marked(input);
 
 const MainContent : React.FC = () => {
 
-    useEffect(() => {
-        marked.setOptions({
-            highlight: code => hljs.highlightAuto(code).value,
-          });
-    });
-
     return (
-        <div>
+        <div className="main-container">
             <div dangerouslySetInnerHTML={{ __html: output}}></div>            
         </div>
     )
