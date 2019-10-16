@@ -25,7 +25,10 @@ export const reducer = (state: ITheme, action: any) => {
 }
 
 
-// 高阶组件，给函数组件注入上下文
+/**
+ * 创建一个 Theme 组件
+ * Theme 组件包裹的所有子组件都可以通过调用 ThemeContext 访问到 value
+ */
 export const Theme: React.FC = (props) => {
     const [state, dispatch] = useReducer(reducer, initialTheme);
     return (
