@@ -34,11 +34,11 @@ const MainWrapper: React.FC = () => {
             <div className="am-row">
                 <Row>
                     {/* main-menu */}
-                    <Col xs={24} sm={24} md={5} lg={5} xl={5} xxl={4}>
+                    <Col xs={24} sm={24} md={5} lg={5} xl={5} xxl={3}>
                         <MainMenu children={theme} />
                     </Col>
                     {/* content */}
-                    <Col xs={0} sm={0} md={19} xl={19} xxl={19}>
+                    <Col xs={0} sm={0} md={19} xl={19} xxl={21}>
                         <MainContent />
                     </Col>
                 </Row>

@@ -14,14 +14,14 @@ const NavBar: React.FC = () => {
             <div className={`am-row ${theme==="light"?'':'ant-menu-dark'}`}>
                 <Row>
                     {/* logo */}
-                    <Col xs={24} sm={24} md={5} lg={5} xl={5} xxl={4}>
+                    <Col xs={24} sm={24} md={5} lg={5} xl={5} xxl={3}>
                         <a id="logo" href="/">
                             <img src="https://wx2.sinaimg.cn/mw690/c990b2b8ly8g5focjdx0jj20u00u0myy.jpg" alt="logo"/>
                             {/* <img src={require('../../../assets/a-mile.svg')} alt="A mile"/> */}
                             <span style={{color: (theme==='light'?'black':'white')}}>A mile</span>
                         </a>
                     </Col>
-                    <Col xs={0} sm={24} md={19} lg={19} xl={19} xxl={20}>
+                    <Col xs={0} sm={24} md={19} lg={19} xl={19} xxl={21}>
                         {/* seach */}
                         <div id="search-box">
                             <Icon type="search" />

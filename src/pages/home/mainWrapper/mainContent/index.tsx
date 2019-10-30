@@ -21,7 +21,7 @@ const MainContent : React.FC = () => {
     const { theme } = state;
 
     return (
-        <div className={`main-container ${theme==="light"?'':'ant-menu-dark'}`}>
+        <div className="main-container">
             <div 
                 className={theme==="light"?'':'markdown-dark'} 
                 dangerouslySetInnerHTML={{ __html: output}}></div>            

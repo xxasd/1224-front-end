@@ -14,10 +14,11 @@ const MainMenu: React.FC = (props) => {
         <Menu
             className={`${theme==="light"?'':'ant-menu-dark'}`}
             onClick={handleClick}
-            mode="inline">
-                <Menu.Item key="1">
-            <span>Option 1</span>
-          </Menu.Item>
+            mode="inline"
+            >
+            <Menu.Item key="1">
+                <span>Option 1</span>
+            </Menu.Item>
             <SubMenu 
                 title={<span>asdq</span>}
                 >
