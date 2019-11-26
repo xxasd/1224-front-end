@@ -1,5 +1,8 @@
 import React, { useContext } from 'react'
 import marked from 'marked'
+import { Button, notification } from 'antd'
+
+import API from '../../../../request/api'
 import { ThemeContext } from '../../../../store/theme'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/railscasts.css'
@@ -20,11 +23,23 @@ const MainContent : React.FC = () => {
     const { state } = useContext(ThemeContext);
     const { theme } = state;
 
+    const registerFunc = async() => {
+        let response = await API({
+            email: '123',
+            password: '123'
+        })
+        notification[response.data.flag? 'success' : 'error']({
+            message: response
+        })
+    }
+
     return (
         <div className="main-container">
             <div 
                 className={theme==="light"?'':'markdown-dark'} 
-                dangerouslySetInnerHTML={{ __html: output}}></div>            
+                dangerouslySetInnerHTML={{ __html: output}}>                
+            </div>
+            <Button onClick={registerFunc}>测试注册</Button>
         </div>
     )
 }
