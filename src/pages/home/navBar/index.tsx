@@ -10,7 +10,8 @@ const NavBar: React.FC = () => {
     return (
         <header 
             id="header" 
-            className="clearfix">
+            className="clearfix"
+        >
             <div className={`am-row ${theme==="light"?'':'ant-menu-dark'}`}>
                 <Row>
                     {/* logo */}

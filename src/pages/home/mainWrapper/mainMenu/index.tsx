@@ -8,7 +8,7 @@ const MainMenu: React.FC = (props) => {
     const theme = props.children;
 
     const handleClick = (e: any) => {
-        console.log('click', e);
+        // console.log('click', e);
     }
 
     return (
@@ -22,14 +22,15 @@ const MainMenu: React.FC = (props) => {
             mode="inline"
         >
             <Menu.Item key="1">
-                <span>Option 1</span>
+                <span>图库</span>
             </Menu.Item>
             <SubMenu 
-                title={<span>asdq</span>}
+                key="sub1"
+                title={<span>文章</span>}
             >
                 <Menu.ItemGroup key="g1" title="Item 1">
-                    <Menu.Item key="1">Option 1</Menu.Item>
-                    <Menu.Item key="2">Option 2</Menu.Item>
+                    <Menu.Item key="2">Option 1</Menu.Item>
+                    <Menu.Item key="3">Option 2</Menu.Item>
                 </Menu.ItemGroup>
             </SubMenu>
         </Menu>
