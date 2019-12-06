@@ -2,7 +2,7 @@
 // 封装axios
 import axios from 'axios'
 import baseUrl from './baseUrl'
-import qs from 'qs'
+// import qs from 'qs'
 import { notification, Modal } from 'antd'
 
 const { confirm } = Modal;
