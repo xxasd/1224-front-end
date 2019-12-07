@@ -3,38 +3,25 @@ import { ThemeContext, CHANGE_THEME } from '../../../store/theme'
 import './index.scss'
 import MainMenu from './mainMenu'
 import MainContent from './mainContent'
-import { Row, Col, Switch } from 'antd'
+import { Row, Col } from 'antd'
+import WeatherLight from './weatherLight'
 
 const MainWrapper: React.FC = () => {
     // 主题
-    const { state, dispatch } = useContext(ThemeContext);
+    const { state } = useContext(ThemeContext);
     const { theme } = state;
     
     useEffect(() => {
-        console.log(state);
+        // console.log(state);
     });
-    
-    // 日间模式
-    const WeatherLight: React.FC = (props) => {
-        const { children } = props;
-        switch (children) {
-            case 'light':
-                return <div>1</div>
-            case 'dark':
-                return <div>2</div>
-            default:
-                return <div></div>
-        }
-    }
 
     return (
         <div 
             className={`main-wrapper ${theme==="light"?'':'ant-menu-dark'}`}>
             <div className="switch-theme">
-                <Switch
+                {/* <Switch
                     checked={theme==="light"}
                     onChange={(value) => {
-                        console.log(value);
                         dispatch({
                             type: CHANGE_THEME,
                             theme: value?'light':'dark'
@@ -42,8 +29,8 @@ const MainWrapper: React.FC = () => {
                     }}
                     checkedChildren="Dark"
                     unCheckedChildren="Light"
-                />
-                <WeatherLight children={theme} />
+                /> */}
+                <WeatherLight />
             </div>
             <div className="am-row">
                 <Row>
