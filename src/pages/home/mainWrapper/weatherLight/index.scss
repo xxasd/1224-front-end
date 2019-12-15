@@ -1,7 +1,7 @@
 .weather {
     position: fixed;
-    right: 30px;
-    top: 30px;
+    left: 30px;
+    bottom: 30px;
     display: inline-block;
     width: 180px;
     height: 240px;
@@ -67,14 +67,14 @@
         transform: translate(-50%, -50%);
         width: 36px;
         height: 36px;
-        background: #fff;
+        background: #eee;
         border-radius: 50%;
         box-shadow: 
-            #fff 22px -15px 0 6px,
-            #fff 57px -6px 0 2px, 
-            #fff 87px 4px 0 -4px,
-            #fff 33px 6px 0 6px,
-            #fff 61px 6px 0 2px,
+            #eee 22px -15px 0 6px,
+            #eee 57px -6px 0 2px, 
+            #eee 87px 4px 0 -4px,
+            #eee 33px 6px 0 6px,
+            #eee 61px 6px 0 2px,
             #ccc 29px -23px 0 6px,
             #ccc 64px -14px 0 2px,
             #ccc 94px -4px 0 -4px;
