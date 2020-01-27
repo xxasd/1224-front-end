@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import marked from 'marked'
-import { Button, notification } from 'antd'
+import { Button } from 'antd'
 
-import API from '../../../../request/api'
-import { ThemeContext } from '../../../../store/theme'
+// import API from '../../../../request/api'
+import { ThemeContext } from '@/store/theme'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/railscasts.css'
 import './index.scss'
@@ -24,13 +24,11 @@ const MainContent : React.FC = () => {
     const { theme } = state;
 
     const registerFunc = async() => {
-        let response = await API({
-            email: '123',
-            password: '123'
-        })
-        notification[response.data.flag? 'success' : 'error']({
-            message: response
-        })
+        // let response = await register({
+        //     email: '123',
+        //     password: '123'
+        // })
+        // console.log(register);
     }
 
     return (

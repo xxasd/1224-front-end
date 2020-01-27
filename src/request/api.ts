@@ -15,4 +15,4 @@ const register = (registerData: IRegister) => {
     return http.post('/login/register', registerData);
 }
 
-export default register
+exports.register = register;
