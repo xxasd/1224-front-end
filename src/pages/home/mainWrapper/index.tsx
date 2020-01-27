@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { ThemeContext, CHANGE_THEME } from '../../../store/theme'
+import { ThemeContext } from '../../../store/theme'
 import './index.scss'
 import MainMenu from './mainMenu'
 import MainContent from './mainContent'
