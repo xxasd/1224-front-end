@@ -6,7 +6,7 @@ interface ITheme {
 }
 // 初始化
 export const initialTheme: ITheme = {
-    theme: 'light'
+    theme: 'dark'
 }
 
 // 创建Context状态实例

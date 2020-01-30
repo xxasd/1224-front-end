@@ -1,0 +1,43 @@
+.index-panel {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  transition: .3s all;
+}
+
+.index-panel.dark {
+  background: #07C160;
+}
+
+.index-panel.light {
+  background: #121314;
+}
+
+.index-panel .change-theme {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.index-panel .index-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80vw;
+}
+
+.index-panel .index-content .author-avatar {
+  margin-bottom: 50px;
+}
+
+.index-panel .index-content .author-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.index-panel .index-content h1, .index-panel .index-content h3, .index-panel .index-content p {
+  color: #fff;
+}
