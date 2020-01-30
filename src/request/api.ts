@@ -11,8 +11,6 @@ interface IRegister {
 }
 
 // 注册
-const register = (registerData: IRegister) => {
+export const register = (registerData: IRegister) => {
     return http.post('/login/register', registerData);
 }
-
-exports.register = register;

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import marked from 'marked'
 import { Button } from 'antd'
 
-// import API from '../../../../request/api'
+import { register } from '@/request/api'
 import { ThemeContext } from '@/store/theme'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/railscasts.css'
@@ -24,11 +24,11 @@ const MainContent : React.FC = () => {
     const { theme } = state;
 
     const registerFunc = async() => {
-        // let response = await register({
-        //     email: '123',
-        //     password: '123'
-        // })
-        // console.log(register);
+        let response = await register({
+            email: '123',
+            password: '123'
+        })
+        console.log(response);
     }
 
     return (
