@@ -1,7 +1,8 @@
-import React, { useContext, useState } from 'react'
-import { Switch, Icon } from 'antd'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Icon, Button } from 'antd'
 import { iconFontUrl } from '@/config'
-import { ThemeContext, CHANGE_THEME } from '@/store/theme'
+// import { ThemeContext, CHANGE_THEME } from '@/store/theme'
 import './index.scss'
 
 // 作者头像
@@ -15,27 +16,27 @@ const IconFont = Icon.createFromIconfontCN({
 // 首页-欢迎页
 const IndexPages: React.FC = () => {
     // 修改theme主题
-    const { state, dispatch } = useContext(ThemeContext);
-    const { theme } = state;
+    // const { state, dispatch } = useContext(ThemeContext);
+    // const { theme } = state;
 
     // 主题的status
-    const [isDark, setIsDark] = useState(false);
+    // const [isDark, setIsDark] = useState(false);
 
-    // 修改主题function
-    function onChange(checked: boolean) {
-        setIsDark(checked);
-        dispatch({
-            type: CHANGE_THEME,
-            theme: isDark ? 'dark' : 'light'
-        })
-    }
+    // 修改主题function 
+    // function onChange(checked: boolean) {
+    //     setIsDark(checked);
+    //     dispatch({
+    //         type: CHANGE_THEME,
+    //         theme: isDark ? 'dark' : 'light'
+    //     })
+    // }
 
     return (
         <div className="index-panel">
-            <div className={`index-bg ${theme === 'light' ? 'light' : 'dark'}`}></div>
-            <div className="change-theme">
+            <div className="index-bg"></div>
+            {/* <div className="change-theme">
                 <Switch onChange={onChange}></Switch>
-            </div>
+            </div> */}
             <div className="index-content">
                 <div className="author-avatar">
                     <img
@@ -46,15 +47,20 @@ const IndexPages: React.FC = () => {
                 <h1>This project write by React Hooks TypeScript and Antd</h1>
                 <h3>Author: A mile</h3>
                 <p>welcome to give a star in my project</p>
+
+                <Link to="/home">
+                    <Button className="index-btn" ghost>enter</Button>
+                </Link>
+
             </div>
             <div className="index-links">
                 {links.map((item, index) => {
                     return (
-                        <a 
-                            key={index} 
-                            className="link" 
-                            href={item.link ? item.link : '#'} 
-                            target={item.link ? '_blank': ''}
+                        <a
+                            key={index}
+                            className="link"
+                            href={item.link ? item.link : '#'}
+                            target={item.link ? '_blank' : ''}
                         >
                             {
                                 item.iconType === 'antd'

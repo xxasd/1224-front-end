@@ -1,23 +1,8 @@
 .index-panel .index-bg {
   position: fixed;
-  transition: .3s all;
   width: 100vw;
   height: 100vh;
-}
-
-.index-panel .index-bg.dark {
   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-}
-
-.index-panel .index-bg.light {
-  background: #fff;
-}
-
-.index-panel .change-theme {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  z-index: 1;
 }
 
 .index-panel .index-content {
@@ -39,22 +24,38 @@
   border-radius: 50%;
 }
 
+.index-panel .index-content .index-btn {
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 1024px) {
+  .index-panel .index-content h1 {
+    font-size: 44px;
+  }
+  .index-panel .index-content h3 {
+    font-size: 28px;
+  }
+  .index-panel .index-content p {
+    font-size: 22px;
+  }
+}
+
 .index-panel .index-links {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 100px;
   z-index: 1;
-  width: 200px;
+  width: 300px;
+  display: flex;
   margin: auto;
 }
 
 .index-panel .index-links .link {
-  display: inline-block;
   width: 50px;
   margin: auto;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 h1, h3, p, .link {
