@@ -1,18 +1,21 @@
 .index-panel {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    transition: .3s all;
-    &.dark {
-        background: #07C160;
-    }
-    &.light {
-        background: #121314;
+    .index-bg {
+        position: fixed;
+        transition: .3s all;
+        width: 100vw;
+        height: 100vh;
+        &.dark {
+            background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+        }
+        &.light {
+            background: #fff;
+        }
     }
     .change-theme {
         position: absolute;
         right: 20px;
         top: 20px;
+        z-index: 1;
     }
     .index-content {
         position: absolute;
@@ -24,13 +27,31 @@
         .author-avatar {
             margin-bottom: 50px;
             img {
-                width: 100px;
-                height: 100px;
+                width: 6rem;
+                height: 6rem;
                 border-radius: 50%;
             }
         }
-        h1, h3, p {
-            color: #fff;
+        
+    }
+    .index-links {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 100px;
+        z-index: 1;
+        width: 200px;
+        margin: auto;
+        .link {
+            display: inline-block;
+            width: 50px;
+            margin: auto;
+            text-align: center;
+            font-size: 1rem;
         }
     }
+}
+
+h1, h3, p, .link {
+    color: #fff;
 }
