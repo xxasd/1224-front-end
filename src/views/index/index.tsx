@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
+import LoginComponent from './login'
+
 import { Link } from 'react-router-dom'
 import { Icon, Button } from 'antd'
 import { iconFontUrl } from '@/config'
@@ -15,12 +17,15 @@ const IconFont = Icon.createFromIconfontCN({
 // 首页-欢迎页
 const IndexView: React.FC = () => {
 
+    const [ showLogin, setShowLogin ] = useState(true);
+
+
+
     return (
         <div className="index-panel">
-            <div className="index-bg"></div>
-            {/* <div className="change-theme">
-                <Switch onChange={onChange}></Switch>
-            </div> */}
+            {/* 背景图 */}
+            <div className="index-bg" />
+            {/* 内容 */}
             <div className="index-content">
                 <div className="author-avatar">
                     <img
@@ -32,12 +37,21 @@ const IndexView: React.FC = () => {
                 <h3>Author: A mile</h3>
                 <p>welcome to give a star in my project</p>
 
-                <Button className="index-btn btn-right" ghost>login in</Button>
+                <Button 
+                    className="index-btn btn-right" 
+                    ghost 
+                    onClick={() => {
+                        setShowLogin(!showLogin)
+                    }}
+                >
+                    login in
+                </Button>
                 <Link to="/home">
                     <Button className="index-btn btn-left" ghost>visit articles</Button>
                 </Link>
 
             </div>
+            {/* 作者链接 */}
             <div className="index-links">
                 {links.map((item, index) => {
                     return (
@@ -56,6 +70,9 @@ const IndexView: React.FC = () => {
                     )
                 })}
             </div>
+
+            {/* 登录组件 */}
+            {showLogin ? <LoginComponent/> : ''}
         </div>
     )
 }
