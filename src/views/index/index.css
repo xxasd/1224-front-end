@@ -15,17 +15,25 @@
 }
 
 .index-panel .index-content .author-avatar {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .index-panel .index-content .author-avatar img {
-  width: 6rem;
-  height: 6rem;
+  width: 5.4rem;
+  height: 5.4rem;
   border-radius: 50%;
 }
 
 .index-panel .index-content .index-btn {
   margin-top: 30px;
+}
+
+.index-panel .index-content .index-btn.btn-right {
+  margin-right: 10px;
+}
+
+.index-panel .index-content .index-btn.btn-left {
+  margin-left: 10px;
 }
 
 @media screen and (min-width: 1024px) {

@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import IndexPages from '@/pages/index'
-import Home from '@/pages/home'
-import Detail from '@/pages/detail'
+import IndexPages from '@/views/index'
+import Home from '@/views/home'
+import Detail from '@/views/detail'
 
 const BasicRoute = () => {
     return (

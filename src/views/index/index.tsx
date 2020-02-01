@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Icon, Button } from 'antd'
 import { iconFontUrl } from '@/config'
-// import { ThemeContext, CHANGE_THEME } from '@/store/theme'
 import './index.scss'
 
 // 作者头像
@@ -14,22 +13,7 @@ const IconFont = Icon.createFromIconfontCN({
 });
 
 // 首页-欢迎页
-const IndexPages: React.FC = () => {
-    // 修改theme主题
-    // const { state, dispatch } = useContext(ThemeContext);
-    // const { theme } = state;
-
-    // 主题的status
-    // const [isDark, setIsDark] = useState(false);
-
-    // 修改主题function 
-    // function onChange(checked: boolean) {
-    //     setIsDark(checked);
-    //     dispatch({
-    //         type: CHANGE_THEME,
-    //         theme: isDark ? 'dark' : 'light'
-    //     })
-    // }
+const IndexView: React.FC = () => {
 
     return (
         <div className="index-panel">
@@ -48,8 +32,9 @@ const IndexPages: React.FC = () => {
                 <h3>Author: A mile</h3>
                 <p>welcome to give a star in my project</p>
 
+                <Button className="index-btn btn-right" ghost>login in</Button>
                 <Link to="/home">
-                    <Button className="index-btn" ghost>enter</Button>
+                    <Button className="index-btn btn-left" ghost>visit articles</Button>
                 </Link>
 
             </div>
@@ -103,4 +88,4 @@ const links = [
     }
 ]
 
-export default IndexPages
+export default IndexView

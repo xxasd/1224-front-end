@@ -19,15 +19,21 @@
         text-align: center;
         width: 80vw;
         .author-avatar {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             img {
-                width: 6rem;
-                height: 6rem;
+                width: 5.4rem;
+                height: 5.4rem;
                 border-radius: 50%;
             }
         }
         .index-btn {
             margin-top: 30px;
+            &.btn-right {
+                margin-right: 10px;
+            }
+            &.btn-left {
+                margin-left: 10px;
+            }
         }
         @media screen and (min-width: 1024px)  {
             h1 { font-size: 44px; }
