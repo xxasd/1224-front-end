@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Modal, Form, Input } from 'antd'
 
-const LoginComponent: React.FC = () => {
+interface loginTypes {
+    IShowLogin: boolean
+}
+
+const LoginComponent: React.FC<loginTypes> = (props) => {
+    
+    const { IShowLogin } = props;
+
+    useEffect(() => {
+        console.log(IShowLogin);
+    }, [IShowLogin]);
+
     return (
-        <div className="login-component"></div>
+        <div className="login-component">
+            <Modal></Modal>
+        </div>
     )
 }
 
