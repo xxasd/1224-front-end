@@ -1,0 +1,103 @@
+@charset "UTF-8";
+.article-create-panel {
+  position: relative;
+}
+
+.article-create-panel .article-create-title {
+  height: 72px;
+  line-height: 72px;
+  margin: 0 30px;
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.article-create-panel .article-create-title input {
+  border: none;
+  outline: none;
+  color: #000000;
+  width: 60vw;
+}
+
+.article-create-panel .article-panel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.article-create-panel .article-panel .article-item {
+  flex: 1;
+  height: calc(100vh - 72px);
+  overflow: auto;
+  padding: 30px;
+}
+
+.article-create-panel .article-panel .article-item::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 10px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+}
+
+.article-create-panel .article-panel .article-item::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  background: #ededed;
+}
+
+.article-create-panel .article-panel .article-item:first-child::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  background: #f8f8f8;
+}
+
+.article-create-panel .article-panel .article-markdown {
+  background-color: #f8f8f8;
+  outline: none;
+  border: none;
+  resize: none;
+}
+
+/* 代码块高亮 */
+.article-preview h1, .article-preview h2, .article-preview h3, .article-preview h4, .article-preview h5, .article-preview h6 {
+  font-weight: bold;
+}
+
+.article-preview pre {
+  position: relative;
+  margin-bottom: 24px;
+  border-radius: 3px;
+  border: 1px solid #ededed;
+  background: #ededed;
+  overflow: hidden;
+  padding: 12px 24px;
+}
+
+.article-preview p code {
+  color: #07c160;
+  display: inline-block;
+  padding: 0 4px;
+  background-color: #ededed;
+}
+
+.article-preview p code .has-numbering {
+  margin-left: 21px;
+}
+
+.article-preview p code .hljs-number {
+  color: #576b95;
+}
+
+.article-preview .pre-numbering {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  padding: 12px 2px 12px 0;
+  border-right: 1px solid #C3CCD0;
+  border-radius: 3px 0 0 3px;
+  background-color: #EEE;
+  text-align: right;
+  font-family: Menlo, monospace;
+  font-size: 0.8em;
+  color: #AAA;
+}

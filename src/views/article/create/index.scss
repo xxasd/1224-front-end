@@ -1,0 +1,93 @@
+.article-create-panel {
+    position: relative;
+    .article-create-title {
+        height: 72px;
+        line-height: 72px;
+        margin: 0 30px;
+        font-size: 25px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        input {
+            border: none;
+            outline: none;
+            color: #000000;
+            width: 60vw;
+        }
+    }
+    .article-panel {
+        display: flex;
+        justify-content: space-between;
+        .article-item {
+            flex: 1;
+            height: calc(100vh - 72px);
+            overflow: auto;
+            padding: 30px;
+            &::-webkit-scrollbar {/*滚动条整体样式*/
+                width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+                height: 1px;
+            }
+            &::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+                background: #ededed;
+            }
+            &:first-child {
+                &::-webkit-scrollbar-track {/*滚动条里面轨道*/
+                    background: #f8f8f8;
+                }
+            }
+        }
+        .article-markdown {
+            background-color: #f8f8f8;
+            outline: none;
+            border: none;
+            resize: none;
+        }
+    }
+}
+
+/* 代码块高亮 */
+.article-preview {
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: bold;
+    }
+    pre {
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 3px;
+        border: 1px solid #ededed;
+        background: #ededed;
+        overflow: hidden;
+        padding: 12px 24px;
+    }
+    p {
+        code {
+            color: #07c160;
+            display: inline-block;
+            // font-weight: 300;
+            // font-family: Menlo, monospace;
+            // margin: 0 6px;
+            padding: 0 4px;
+            background-color: #ededed;
+            .has-numbering {
+                margin-left: 21px;
+            }
+            .hljs-number {
+                color: #576b95;
+            }
+        }
+    }
+    .pre-numbering {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 12px 2px 12px 0;
+        border-right: 1px solid #C3CCD0;
+        border-radius: 3px 0 0 3px;
+        background-color: #EEE;
+        text-align: right;
+        font-family: Menlo, monospace;
+        font-size: 0.8em;color: #AAA;
+    }
+}
