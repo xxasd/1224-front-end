@@ -21,17 +21,25 @@ const ArticleCreateView: React.FC = () => {
     // markdown内容
     const [output, setOutput] = useState("");
 
+    // 修改标题内容
+    function inputTitleChange({ target: { value } }: any) {
+        setTitle(value);
+    }
+
     // 修改textarea内容
-    function inputOnChange({ target: { value } }: any) {
+    function inputTextAreaChange({ target: { value } }: any) {
         setInputArea(value);
         setOutput(marked(value));
-        console.log(output);
     }
 
     return (
         <div className="article-create-panel">
             <div className="article-create-title">
-                <input placeholder="请输入标题" />
+                <input 
+                    placeholder="请输入标题" 
+                    value={inputTitle}
+                    onChange={inputTitleChange} 
+                />
                 <Button
                     className="create-btn"
                     type="primary"
@@ -41,8 +49,16 @@ const ArticleCreateView: React.FC = () => {
                 </Button>
             </div>
             <div className="article-panel">
-                <textarea placeholder="请输入内容" className="article-markdown article-item" value={inputArea} onChange={inputOnChange} />
-                <div className="article-preview article-item" dangerouslySetInnerHTML={{ __html: output }}></div>
+                <textarea 
+                    placeholder="请输入内容" 
+                    className="article-markdown article-item" 
+                    value={inputArea} 
+                    onChange={inputTextAreaChange} 
+                />
+                <div 
+                    className="article-preview article-item" 
+                    dangerouslySetInnerHTML={{ __html: output }}
+                />
             </div>
         </div>
     )
