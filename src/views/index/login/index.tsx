@@ -15,7 +15,17 @@ const LoginComponent: React.FC<loginTypes> = (props) => {
 
     return (
         <div className="login-component">
-            <Modal></Modal>
+            <Modal 
+                visible={IShowLogin}
+                title="Login in"
+                okText="login in"
+            >
+                <Form layout="vertical">
+                    <Form.Item>
+                        <Input></Input>
+                    </Form.Item>
+                </Form>
+            </Modal>
         </div>
     )
 }

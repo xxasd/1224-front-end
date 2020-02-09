@@ -14,14 +14,10 @@ const IconFont = Icon.createFromIconfontCN({
     scriptUrl: iconFontUrl,
 });
 
-interface indexTypes {
-    IShowLogin: boolean
-}
-
 // 首页-欢迎页
-const IndexView: React.FC<indexTypes> = ({IShowLogin}) => {
+const IndexView: React.FC = () => {
 
-    const [ showLogin, setShowLogin ] = useState(true);
+    const [ showLogin, setShowLogin ] = useState(false);
 
     return (
         <div className="index-panel">
