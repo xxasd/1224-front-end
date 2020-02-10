@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import LoginComponent from './login'
+import React, { useRef } from 'react'
+import LoginComponent from '@/components/login'
 
 import { Link } from 'react-router-dom'
 import { Icon, Button } from 'antd'
@@ -17,7 +17,13 @@ const IconFont = Icon.createFromIconfontCN({
 // 首页-欢迎页
 const IndexView: React.FC = () => {
 
-    const [ showLogin, setShowLogin ] = useState(false);
+    const childRef = useRef<any | null>(null);
+
+    const updateChildState = () => {
+        if (childRef.current) {
+            childRef.current.changeShowLogin(true);
+        }
+    }
 
     return (
         <div className="index-panel">
@@ -38,9 +44,7 @@ const IndexView: React.FC = () => {
                 <Button 
                     className="index-btn btn-right" 
                     ghost 
-                    onClick={() => {
-                        setShowLogin(!showLogin)
-                    }}
+                    onClick={updateChildState}
                 >
                     login in
                 </Button>
@@ -65,12 +69,12 @@ const IndexView: React.FC = () => {
                                     : <IconFont type={item.icon} />
                             }
                         </a>
-                    )
+                    ) 
                 })}
             </div>
 
             {/* 登录组件 */}
-            <LoginComponent IShowLogin={showLogin} />
+            <LoginComponent cref={childRef} />
         </div>
     )
 }

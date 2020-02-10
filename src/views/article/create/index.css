@@ -5,13 +5,13 @@
 
 .article-create-panel .article-create-title {
   height: 72px;
-  line-height: 72px;
-  margin: 0 30px;
+  padding: 0 30px;
   font-size: 25px;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #f8f8f8;
 }
 
 .article-create-panel .article-create-title input {
