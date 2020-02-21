@@ -46,7 +46,7 @@ const IndexView: React.FC = () => {
                     ghost 
                     onClick={updateChildState}
                 >
-                    login in
+                    log in
                 </Button>
                 <Link to="/home">
                     <Button className="index-btn btn-left" ghost>visit articles</Button>

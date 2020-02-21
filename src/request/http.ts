@@ -3,39 +3,35 @@
 import axios from 'axios'
 import baseUrl from './baseUrl'
 // import qs from 'qs'
-import { notification, Modal } from 'antd'
+import { message, Modal } from 'antd'
 
 const { confirm } = Modal;
 
 const instance = axios.create({
     // 配置默认项
     baseURL: baseUrl,        // 请求地址url
-    timeout: 10000,          // 请求超时时间
+    timeout: 30000,          // 请求超时时间
 })
 
 instance.interceptors.response.use(
     response => {
+        console.log(response.headers);
         // 成功
         if (response.data.status === 200) {            
             return Promise.resolve(response.data);        
         } else {
-            notification['error']({
-                message: response.data.message
-            })
+            message.info(response.data.message || "系统异常")
             return Promise.reject({
                 message: response.data.message
             });        
         }
-
-        // session 过期
+        
         // 系统异常
     },
     // 服务器状态码不是2开头的的情况
     error => {
         try {
-            notification['error']({
-                message: error.response.data.message || '系统异常'
-            })
+            message.info(error.response.data.message || "系统异常")
             // 需要登录才能进行的操作
             if (error.response.status === 401) {
                 confirm({
@@ -47,9 +43,7 @@ instance.interceptors.response.use(
                         }).then(() => 
                             window.location.host = '/login'
                         ).catch(() => 
-                            notification['error']({
-                                message: error.response.data.message || '系统异常'
-                            })
+                            message.info(error.response.data.message || "系统异常")
                         );
                     },
                     onCancel() {}
@@ -57,14 +51,13 @@ instance.interceptors.response.use(
             }
         } catch (err) {
             console.log('[系统异常]', err);
-            notification['error']({
-                message: '系统异常，请稍后重试！'
-            })
+            message.info(error.response.data.message || "系统异常")
         }
         return Promise.reject({
             messageCode: 'sysError'
         });
-    }
+    },
+    
 )
 
 export default instance;
