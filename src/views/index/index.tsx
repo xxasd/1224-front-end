@@ -1,6 +1,5 @@
 import React, { useRef } from 'react'
 import LoginComponent from '@/components/login'
-
 import { Link } from 'react-router-dom'
 import { Icon, Button } from 'antd'
 import { iconFontUrl } from '@/config'
