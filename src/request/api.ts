@@ -24,8 +24,25 @@ interface ILogin {
     email: string,
     password: string
 }
-
-// 登录
 export const loginApi = (loginData: ILogin) => {
     return http.post('/login/login', loginData);
+}
+
+// 文章列表
+export const articleListApi = () => {
+    return http.get('/article/list');
+}
+
+/**
+ * 新建文章
+ * @param {String} title    [文章标题]
+ * @param {String} content  [文章内容] 
+ */
+interface IArticleCreate {
+    title: string,
+    content: string,
+    logo?: string
+}
+export const articleCreate = (articleData: IArticleCreate) => {
+    return http.post('/article/create', articleData);
 }

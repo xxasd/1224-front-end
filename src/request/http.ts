@@ -13,6 +13,8 @@ const instance = axios.create({
     timeout: 30000,          // 请求超时时间
 })
 
+instance.defaults.headers.authorization = localStorage.getItem("token");
+
 instance.interceptors.response.use(
     response => {
         console.log(response.headers);

@@ -1,6 +1,7 @@
 import React, { useState, useImperativeHandle, } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Modal, Form, Input, AutoComplete, message } from 'antd'
+
 import { loginApi } from '@/request/api'
 
 const InputGroup = Input.Group;
@@ -23,7 +24,7 @@ interface ILogin {
 const LoginComponent: React.FC<LoginProps> = ({ cref }) => {
     // 浏览器
     const history = useHistory();
-    
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [confirmLoading, setConfirmLoading] = useState(false)
@@ -56,21 +57,23 @@ const LoginComponent: React.FC<LoginProps> = ({ cref }) => {
     }
 
     const login = async () => {
-        const loginQuery: ILogin = {
-            email: email,
-            password: password
-        }
         if (!email) {
             message.error("email is required")
             return
         }
         if (!password) {
-            message.error("email is required")
+            message.error("password is required")
             return
+        }
+        const loginQuery: ILogin = {
+            email: email,
+            password: password
         }
         setConfirmLoading(true);
         try {
-            await loginApi(loginQuery);
+            const res = await loginApi(loginQuery);
+            const { token } = res.data;
+            localStorage.setItem("token", token);
             message.success("登录成功")
 
             // 隐藏登录组件
@@ -78,7 +81,7 @@ const LoginComponent: React.FC<LoginProps> = ({ cref }) => {
             changeShowLogin()
 
             // 跳转至首页
-            
+
             console.log(history)
             history.push('/home');
         } catch (error) {
