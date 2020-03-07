@@ -4,18 +4,20 @@ import { articleListApi } from '@/request/api'
 import './index.scss'
 
 interface articleListProps {
-    id: number
-    uuid: string
-    title: string
-    logo: string
-    content: string
-    likes: number
-    reading: number
-    status: number
-    created_at: string
-    updated_at: string
-    createdAt: string
-    updatedAt: string
+    userInfo: {
+        nickname: string,
+        avatar: string
+    },
+    article: {
+        id: number,
+        title: string,
+        uuid: string,
+        logo: string,
+        likes: number,
+        reading: number,
+        created_at: string,
+        updated_at: string,
+    }
 }
 
 const HomeView: React.FC = () => {
@@ -30,19 +32,20 @@ const HomeView: React.FC = () => {
     const getArticleList = async () => {
         const res = await articleListApi();
         const { data } = res;
-        console.log(data);
         setArticleList(data)
     }
 
     return (
-        <div>
-            {articleList && articleList.map((item: articleListProps, index: number) => {
-                return (
-                    <div key={index}>
-                        <div>{item.title}</div>
-                    </div>
-                )
-            })}
+        <div className="home-panel">
+            <div className="article-panel">
+                {articleList && articleList.map((item: articleListProps, index: number) => {
+                    return (
+                        <div className="article-item" key={index}>
+                            <div className="article-">{item.article.title}</div>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }
