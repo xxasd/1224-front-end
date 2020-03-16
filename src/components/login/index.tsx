@@ -1,6 +1,8 @@
-import React, { useState, useImperativeHandle, } from 'react'
+import React, { useState, useImperativeHandle } from 'react'
 import { useHistory } from 'react-router-dom'
-import { Modal, Form, Input, AutoComplete, message } from 'antd'
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Modal, Input, AutoComplete, message } from 'antd';
 
 import { loginApi } from '@/request/api'
 

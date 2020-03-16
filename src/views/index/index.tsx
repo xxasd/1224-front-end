@@ -1,17 +1,18 @@
 import React, { useRef } from 'react'
 import LoginComponent from '@/components/login'
 import { Link } from 'react-router-dom'
-import { Icon, Button } from 'antd'
-import { iconFontUrl } from '@/config'
+import {Icon} from '@ant-design/compatible';
+import { Button } from 'antd';
+// import { iconFontUrl } from '@/config'
 import './index.scss'
 
 // 作者头像
 const authorAvatar = "https://wx2.sinaimg.cn/mw690/c990b2b8ly8g5focjdx0jj20u00u0myy.jpg";
 
 // IconFont
-const IconFont = Icon.createFromIconfontCN({
-    scriptUrl: iconFontUrl,
-});
+// const IconFont = createFromIconfontCN({
+//     scriptUrl: iconFontUrl,
+// });
 
 // 首页-欢迎页
 const IndexView: React.FC = () => {
@@ -65,17 +66,17 @@ const IndexView: React.FC = () => {
                             {
                                 item.iconType === 'antd'
                                     ? <Icon type={item.icon} />
-                                    : <IconFont type={item.icon} />
+                                    : <Icon type={item.icon} />
                             }
                         </a>
-                    ) 
+                    ); 
                 })}
             </div>
 
             {/* 登录组件 */}
             <LoginComponent cref={childRef} />
         </div>
-    )
+    );
 }
 
 // 入口链接
@@ -100,9 +101,9 @@ const links = [
     },
     {
         name: 'juejin',
-        icon: 'iconjuejin',
+        icon: 'ie',
         link: 'https://juejin.im/user/5d4bbd9fe51d456201486de8',
-        iconType: 'iconfont'
+        iconType: 'antd'
     }
 ]
 

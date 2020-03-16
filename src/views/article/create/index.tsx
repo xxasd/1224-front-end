@@ -83,7 +83,6 @@ const ArticleCreateView: React.FC = () => {
                     loading={showLoading}
                     className="create-btn"
                     type="primary"
-                    icon="bulb"
                     onClick={createArticle}
                 >
                     create
@@ -102,7 +101,7 @@ const ArticleCreateView: React.FC = () => {
                 />
             </div>
         </div>
-    )
+    );
 }
 
 export default ArticleCreateView
